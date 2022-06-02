@@ -1,0 +1,47 @@
+const template = document.querySelector(".template");
+const phone_container = document.querySelector(".body__phone_container");
+
+const tel = [
+    {
+     img: '/phone 1.jpeg',
+     discount: 'скидка',
+     name: 'Смартфон Xiaomi Redmi 9A, 2+32 Гб, Гранитный серый',
+     price1: '7 990 ₽',
+     price2: '8 990 ₽',
+     button: 'купить'
+    },
+    {
+    img:'/phone 2.jpeg', 
+    discount: '',
+    name: 'Смартфон Xiaomi Redmi 9C, 4+128 Гб, Лавандовый фиолетовый',
+    price1: '12 990 ₽',
+    price2: '',
+    button: 'купить'
+    },
+    {
+    img:'/phone 3.jpeg',    
+    discount: 'акция | скидка',
+    name: 'Смартфон Xiaomi 11T, 8+256, Метеоритный серый',
+    price1: '44 990 ₽',
+    price2: '49 990 ₽',
+    button: 'купить'
+    },
+    {
+    img:'/phone 3.jpeg', 
+    discount: 'акция | скидка',
+    name: 'Смартфон Xiaomi 11T, 8+256, Лунный белый',
+    price1: '44 990 ₽',
+    price2: '49 990 ₽',
+    button: 'купить'
+    },
+];
+tel.forEach( function(phone)  {
+    const listItem1 = template.content.firstElementChild.cloneNode(true);
+        listItem1.querySelector("img").src = phone.img
+        listItem1.querySelector(".body__text__sale").innerText = phone.discount
+        listItem1.querySelector(".body-card__title-link").innerText = phone.name
+        listItem1.querySelector(".price1").innerText = phone.price1 
+        listItem1.querySelector(".price2").innerText = phone.price2
+        listItem1.querySelector(".button").innerText = phone.button 
+        document.querySelector("body").append(listItem1); 
+    })
